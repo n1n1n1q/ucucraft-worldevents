@@ -1,0 +1,52 @@
+prefix: '<gray>[</gray><aqua>WorldEvents</aqua><gray>]</gray> '
+
+never: 'never'
+
+state:
+  running: '<green>running</green>'
+  idle: '<gray>idle</gray>'
+
+event:
+  started: '<gold><event></gold> <yellow>has begun!</yellow>'
+  stopped: '<gold><event></gold> <yellow>has ended.</yellow>'
+
+command:
+  unknown-event: '<red>Unknown event: <white><id></white></red>'
+  invalid-duration: '<red>Invalid duration: <white><input></white></red> <gray>(try 30s, 20m, 6h, 1h30m)</gray>'
+  invalid-time: '<red>Invalid time: <white><input></white></red> <gray>(try 12:00)</gray>'
+
+  list:
+    header: '<aqua>World events</aqua> <gray>(<count>)</gray>'
+    entry: '<gray>-</gray> <white><id></white> <gray>|</gray> <state> <gray>|</gray> <gray>next:</gray> <white><next></white>'
+    empty: '<gray>No events are configured.</gray>'
+
+  info:
+    header: '<aqua><event></aqua> <gray>(<id>)</gray>'
+    state: '<gray>State:</gray> <state>'
+    duration: '<gray>Duration:</gray> <white><duration></white>'
+    schedule: '<gray>Schedule:</gray> <white><schedule></white>'
+    next-run: '<gray>Next run:</gray> <white><time></white> <gray>(in <in>)</gray>'
+    no-next-run: '<gray>Next run:</gray> <white>not scheduled</white>'
+    ends-in: '<gray>Ends in:</gray> <white><in></white>'
+
+  start:
+    success: '<green>Started <white><event></white>.</green>'
+    already-running: '<yellow><event> is already running.</yellow>'
+
+  stop:
+    success: '<green>Stopped <white><event></white>.</green>'
+    not-running: '<yellow><event> is not running.</yellow>'
+
+  schedule:
+    set: '<green><event> will run at <white><time></white> (in <in>).</green>'
+
+  cancel:
+    success: '<green>Cancelled the pending run of <white><event></white>. Next run: <white><next></white>.</green>'
+    nothing: '<yellow><event> has no pending run to cancel.</yellow>'
+
+  time:
+    updated: '<green>Schedule for <white><event></white> is now <white><schedule></white>.</green>'
+
+  reload:
+    success: '<green>Configuration reloaded.</green>'
+    failed: '<red>Reload failed, see console for details.</red>'

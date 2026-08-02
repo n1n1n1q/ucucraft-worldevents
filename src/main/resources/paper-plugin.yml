@@ -1,0 +1,36 @@
+name: UCUCraftWorldEvents
+version: '${version}'
+main: net.ucucraft.worldevents.WorldEventsPlugin
+description: Recurring global world events.
+author: UCUCraft
+api-version: '26.2'
+
+permissions:
+  worldevents.command:
+    description: Access to the /worldevent command.
+    default: op
+    children:
+      worldevents.command.list: true
+      worldevents.command.info: true
+      worldevents.command.start: true
+      worldevents.command.stop: true
+      worldevents.command.schedule: true
+      worldevents.command.cancel: true
+      worldevents.command.time: true
+      worldevents.command.reload: true
+  worldevents.command.list:
+    default: op
+  worldevents.command.info:
+    default: op
+  worldevents.command.start:
+    default: op
+  worldevents.command.stop:
+    default: op
+  worldevents.command.schedule:
+    default: op
+  worldevents.command.cancel:
+    default: op
+  worldevents.command.time:
+    default: op
+  worldevents.command.reload:
+    default: op

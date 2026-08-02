@@ -1,0 +1,52 @@
+prefix: '<gray>[</gray><aqua>WorldEvents</aqua><gray>]</gray> '
+
+never: 'ніколи'
+
+state:
+  running: '<green>активна</green>'
+  idle: '<gray>неактивна</gray>'
+
+event:
+  started: '<gold><event></gold> <yellow>розпочалася!</yellow>'
+  stopped: '<gold><event></gold> <yellow>завершилася.</yellow>'
+
+command:
+  unknown-event: '<red>Невідома подія: <white><id></white></red>'
+  invalid-duration: '<red>Некоректна тривалість: <white><input></white></red> <gray>(напр. 30s, 20m, 6h, 1h30m)</gray>'
+  invalid-time: '<red>Некоректний час: <white><input></white></red> <gray>(напр. 12:00)</gray>'
+
+  list:
+    header: '<aqua>Глобальні події</aqua> <gray>(<count>)</gray>'
+    entry: '<gray>-</gray> <white><id></white> <gray>|</gray> <state> <gray>|</gray> <gray>наступна:</gray> <white><next></white>'
+    empty: '<gray>Жодної події не налаштовано.</gray>'
+
+  info:
+    header: '<aqua><event></aqua> <gray>(<id>)</gray>'
+    state: '<gray>Стан:</gray> <state>'
+    duration: '<gray>Тривалість:</gray> <white><duration></white>'
+    schedule: '<gray>Розклад:</gray> <white><schedule></white>'
+    next-run: '<gray>Наступний запуск:</gray> <white><time></white> <gray>(через <in>)</gray>'
+    no-next-run: '<gray>Наступний запуск:</gray> <white>не заплановано</white>'
+    ends-in: '<gray>Завершиться через:</gray> <white><in></white>'
+
+  start:
+    success: '<green>Подію <white><event></white> запущено.</green>'
+    already-running: '<yellow><event> вже активна.</yellow>'
+
+  stop:
+    success: '<green>Подію <white><event></white> зупинено.</green>'
+    not-running: '<yellow><event> не активна.</yellow>'
+
+  schedule:
+    set: '<green><event> запуститься о <white><time></white> (через <in>).</green>'
+
+  cancel:
+    success: '<green>Запланований запуск <white><event></white> скасовано. Наступний: <white><next></white>.</green>'
+    nothing: '<yellow>У <event> немає запланованого запуску.</yellow>'
+
+  time:
+    updated: '<green>Розклад <white><event></white> тепер: <white><schedule></white>.</green>'
+
+  reload:
+    success: '<green>Конфігурацію перезавантажено.</green>'
+    failed: '<red>Помилка перезавантаження, дивіться консоль.</red>'

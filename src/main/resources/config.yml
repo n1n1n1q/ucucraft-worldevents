@@ -1,0 +1,32 @@
+core:
+  # How often (in server ticks) schedules are checked and running events are ticked.
+  tick-interval: 20
+  # 'system' or an IANA zone id such as Europe/Kyiv. All schedules use real-world time.
+  timezone: system
+
+messages:
+  # File loaded from lang/<language>.yml
+  language: en
+  prefix-enabled: true
+
+# Each entry is one configured event.
+#
+#   <id>:
+#     type: <registered event type>   # optional, defaults to the entry id
+#     enabled: true
+#     display-name: 'Falling Chunks'  # optional, defaults to the entry id
+#     duration: 10m                   # 0s = runs until stopped manually
+#     announce: true
+#     schedule:
+#       type: PERIODIC                # NONE | PERIODIC | FIXED_TIME | RANDOM
+#       interval: 6h                  # PERIODIC
+#       times: ['00:00', '12:00']     # FIXED_TIME
+#       days: []                      # FIXED_TIME, empty = every day
+#       min-delay: 2h                 # RANDOM
+#       max-delay: 8h                 # RANDOM
+#       jitter:                       # optional noise on top of any schedule type
+#         distribution: NORMAL        # NONE | UNIFORM | NORMAL
+#         before: 20m
+#         after: 20m
+#     settings: {}                    # options specific to the event type
+events: {}
