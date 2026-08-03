@@ -41,7 +41,20 @@ public enum Msg {
     TIME_UPDATED("command.time.updated"),
 
     RELOAD_SUCCESS("command.reload.success"),
-    RELOAD_FAILED("command.reload.failed");
+    RELOAD_FAILED("command.reload.failed"),
+
+    BLIGHT_UNAVAILABLE("event.blight.unavailable"),
+    BLIGHT_BUSY("event.blight.busy"),
+    BLIGHT_NO_REGION("event.blight.no-region"),
+    BLIGHT_SPREADING("event.blight.spreading"),
+    BLIGHT_ACTIVE("event.blight.active"),
+    BLIGHT_LOCATION("event.blight.location"),
+    BLIGHT_OUTRO_DARKNESS("event.blight.outro.darkness"),
+    BLIGHT_OUTRO_TELEPORT("event.blight.outro.teleport"),
+    BLIGHT_RESTORING("event.blight.restoring"),
+    BLIGHT_RESTORED("event.blight.restored"),
+    BLIGHT_RECOVERED("event.blight.recovered"),
+    BLIGHT_BLOCKS_LOST_WARNING("event.blight.blocks-lost-warning");
 
     private final String path;
 

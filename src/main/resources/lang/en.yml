@@ -10,6 +10,22 @@ event:
   started: '<gold><event></gold> <yellow>has begun!</yellow>'
   stopped: '<gold><event></gold> <yellow>has ended.</yellow>'
 
+  blight:
+    unavailable: '<red><event> is unavailable right now (Countries is not loaded).</red>'
+    busy: '<red><event> is still cleaning up from its last run.</red>'
+    no-region: '<red>Could not find a suitable spot for <white><event></white>.</red>'
+    spreading: '<gold>The <event></gold> <yellow>is spreading near <white><location></white>...</yellow>'
+    active: '<gold>The <event></gold> <yellow>has consumed the land! Mine the endstone while it lasts.</yellow>'
+    location: '<gray>Corruption detected near</gray> <white><location></white>'
+    restoring: '<yellow>The corrupted land is being restored...</yellow>'
+    restored: '<green>The land has been fully restored.</green>'
+    recovered: '<yellow>Recovered an unfinished <white><event></white> restore from before the last shutdown.</yellow>'
+    blocks-lost-warning: '<red>Some blocks from <white><event></white> could not be restored automatically; check the console.</red>'
+
+    outro:
+      darkness: '<dark_purple>Darkness creeps in as the corruption withdraws...</dark_purple>'
+      teleport: '<light_purple>You are pulled through the rift!</light_purple>'
+
 command:
   unknown-event: '<red>Unknown event: <white><id></white></red>'
   invalid-duration: '<red>Invalid duration: <white><input></white></red> <gray>(try 30s, 20m, 6h, 1h30m)</gray>'

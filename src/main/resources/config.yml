@@ -29,4 +29,94 @@ messages:
 #         before: 20m
 #         after: 20m
 #     settings: {}                    # options specific to the event type
-events: {}
+events:
+  endstone-blight:
+    # Requires the Countries plugin (for claim data) to be installed and enabled; disabled by default
+    # since the region picked is based on wilderness distance from claims and the event refuses to
+    # start when Countries is unavailable.
+    enabled: false
+    display-name: 'Endstone Blight'
+    duration: 15m
+    announce: false
+    schedule:
+      type: NONE
+    settings:
+      world: ''                    # empty = the world with the most claims
+      region:
+        size-min: 8                # chunks in the fully converted core
+        size-max: 14
+        compactness: 1.6           # <1 tendrils/lines, 1 ragged, >2 disc
+        max-seed-attempts: 24
+        require-generated: true
+        allow-claimed: false
+        require-claims: false
+        search:
+          margin-chunks: 96
+          max-radius-chunks: 384
+          max-cells: 262144
+        weight:
+          min-distance-chunks: 10
+          cap-distance-chunks: 96
+          exponent: 2.0
+          base-weight: 0.05
+        infection:
+          rings: 1
+          chance: 0.35
+          decay: 0.5
+          loot: true
+      conversion:
+        block: END_STONE
+        min-y: -64
+        max-y: 320
+        skip-block-entities: true
+        keep:
+          - '#minecraft:leaves'
+          - '#minecraft:logs'
+          - '#minecraft:shulker_boxes'
+          - BEDROCK
+          - OBSIDIAN
+          - END_PORTAL_FRAME
+          - REINFORCED_DEEPSLATE
+          - GLOWSTONE
+          - SEA_LANTERN
+          - GLASS
+          - ICE
+      engine:
+        blocks-per-tick: 3000
+        max-ms-per-tick: 3.0
+        resync-chunks: false
+        shutdown-budget-ms: 20000
+      backup:
+        directory: blight
+        restore-mode: ALL
+        quarantine-broken: true
+      loot:
+        deliver: DROP               # DROP | INVENTORY
+        drop-endstone: false
+        require-pickaxe: true
+        silk-touch: NO_LOOT         # NO_LOOT | NORMAL
+        chance-cap: 1.0
+        base:
+          diamond: { material: DIAMOND, chance: 0.004, amount: [ 1, 1 ] }
+          iron: { material: RAW_IRON, chance: 0.045, amount: [ 1, 2 ] }
+          redstone: { material: REDSTONE, chance: 0.05, amount: [ 1, 3 ] }
+        tools:
+          NETHERITE_PICKAXE:
+            diamond: { chance: 0.006 }
+            netherite: { material: ANCIENT_DEBRIS, chance: 0.0015, amount: [ 1, 1 ] }
+        enchantments:
+          'minecraft:fortune':
+            per-level: 0.25          # chance x (1 + 0.25 * level)
+            applies-to: [ ]          # empty = every entry
+            entries:
+              redstone: { amount: [ 0, 2 ] }
+      outro:
+        enabled: true
+        radius-chunks: 5
+        darkness-delay: 4s
+        darkness-duration: 12s
+        portal-duration: 3s
+        portal-particles: 60
+        clear-effects: true
+        clear-delay: 1s
+        restore-delay: 2s

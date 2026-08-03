@@ -10,6 +10,22 @@ event:
   started: '<gold><event></gold> <yellow>розпочалася!</yellow>'
   stopped: '<gold><event></gold> <yellow>завершилася.</yellow>'
 
+  blight:
+    unavailable: '<red><event> зараз недоступна (плагін Countries не завантажено).</red>'
+    busy: '<red><event> ще завершує прибирання після попереднього запуску.</red>'
+    no-region: '<red>Не вдалося знайти придатне місце для <white><event></white>.</red>'
+    spreading: '<gold>Подія <event></gold> <yellow> поширюється біля <white><location></white>...</yellow>'
+    active: '<gold>Подія <event></gold> <yellow>поглинула землю! Копайте ендкамінь, поки він є.</yellow>'
+    location: '<gray>Виявлено скверну поблизу</gray> <white><location></white>'
+    restoring: '<yellow>Уражена земля відновлюється...</yellow>'
+    restored: '<green>Землю повністю відновлено.</green>'
+    recovered: '<yellow>Відновлено незавершене відновлення <white><event></white> після минулого вимкнення.</yellow>'
+    blocks-lost-warning: '<red>Деякі блоки з <white><event></white> не вдалося відновити автоматично; перевірте консоль.</red>'
+
+    outro:
+      darkness: '<dark_purple>Темрява насувається, скверна відступає...</dark_purple>'
+      teleport: '<light_purple>Вас затягує крізь розлом!</light_purple>'
+
 command:
   unknown-event: '<red>Невідома подія: <white><id></white></red>'
   invalid-duration: '<red>Некоректна тривалість: <white><input></white></red> <gray>(напр. 30s, 20m, 6h, 1h30m)</gray>'

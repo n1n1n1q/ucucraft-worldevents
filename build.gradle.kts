@@ -13,6 +13,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:26.2.build.87-stable")
+    compileOnly(files("libs/countries-1.0.0.jar"))
 }
 
 java {

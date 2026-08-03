@@ -41,6 +41,11 @@ public abstract class WorldEvent {
     protected void onTick() {
     }
 
+    /** Override to refuse a start (missing dependency, still cleaning up a previous run, ...). */
+    protected boolean canStart(EventTrigger trigger) {
+        return true;
+    }
+
     public final boolean start(EventTrigger trigger) {
         return start(trigger, null);
     }
@@ -48,6 +53,9 @@ public abstract class WorldEvent {
     /** @param durationOverride runtime length for this run only, or {@code null} to use the config value */
     public final boolean start(EventTrigger trigger, Duration durationOverride) {
         if (state == EventState.RUNNING) {
+            return false;
+        }
+        if (!canStart(trigger)) {
             return false;
         }
         state = EventState.RUNNING;

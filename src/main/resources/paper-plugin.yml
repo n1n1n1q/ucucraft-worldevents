@@ -5,6 +5,12 @@ description: Recurring global world events.
 author: UCUCraft
 api-version: '26.2'
 
+dependencies:
+  server:
+    Countries:
+      required: false
+      load: BEFORE
+
 permissions:
   worldevents.command:
     description: Access to the /worldevent command.
